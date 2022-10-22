@@ -78,7 +78,7 @@ class ArticleController extends AdminBaseController
         $form->url("url", "站外跳转地址")->help("文章跳转地址，填写则有限以该字段值进行跳转。");
         $form->text("author", "文章作者")->default($author)->help("文章作者");
         $form->radio("is_share", "允许转载")->options([1 => "允许", 2 => "禁用"])->default(2)->help("选择禁止，则允许转载。");
-        $form->textarea("share_text", "转载描述")->default("感谢您的阅读，本文作者" . $author . "编写。")->help("转载文本描述。");
+        $form->textarea("share_text", "转载描述")->default("感谢您的阅读，本文由" . $author . "编写。")->help("转载文本描述。");
         $form->text("seo_title", "SEO标题")->help("seo标题")->default("秋秋软件");
         $form->text("seo_keywords", "SEO标题")->help("seo关键词")->default("秋秋软件,秋秋软件大学堂,秋秋,秋秋软件,工作室,产品,独立开发者,全栈开发,设计,工具,app,iOS,Android,UI");
         $form->text("seo_description", "SEO标题")->help("seo描述")->default("专做Mac软件、Mac破解软件、windows软件、windows破解软件、优秀设计资源、优秀工具等内容");
