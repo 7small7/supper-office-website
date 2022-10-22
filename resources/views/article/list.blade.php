@@ -167,7 +167,13 @@
                                 <span>{{$items->lastPage() -1}}</span>
                             </a>
                         </li>
-                    @elseif(ceil($items->total() / $items->perPage()) <= 4)
+                        {{--                        最后一页页码--}}
+                        <li class="paginator__item">
+                            <a href="{{$items->url($items->lastPage())}}">
+                                <span>{{$items->lastPage()}}</span>
+                            </a>
+                        </li>
+                    @elseif(ceil($items->total() / $items->perPage()) <= 4 && $items->total() > 0)
                         @for($i =1; $i < ceil($items->total() / $items->perPage()); $i++)
                             <li class="paginator__item">
                                 <a href="{{$items->url($i)}}">
@@ -175,13 +181,13 @@
                                 </a>
                             </li>
                         @endfor
+                        {{--                        最后一页页码--}}
+                        <li class="paginator__item">
+                            <a href="{{$items->url($items->lastPage())}}">
+                                <span>{{$items->lastPage()}}</span>
+                            </a>
+                        </li>
                     @endif
-                    {{--                        最后一页页码--}}
-                    <li class="paginator__item">
-                        <a href="{{$items->url($items->lastPage())}}">
-                            <span>{{$items->lastPage()}}</span>
-                        </a>
-                    </li>
                     {{--                        下一页链接--}}
                     @if($items->currentPage() != $items->lastPage())
                         <li class="paginator__item">
