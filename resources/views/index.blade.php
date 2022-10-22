@@ -148,11 +148,11 @@
                     <button class="page__menu-btn" type="button"><i class="iconfont icon-menu"></i></button>
                 </div>
             </nav>
-            <section class="page__info">
-                <h1 class="info__title">秋秋软件网站</h1>
-                <hr class="info__hr">
-                <p class="info__desc">专注互联网好产品，让分享不停止</p>
-            </section>
+            {{--            <section class="page__info">--}}
+            {{--                <h1 class="info__title">秋秋软件网站</h1>--}}
+            {{--                <hr class="info__hr">--}}
+            {{--                <p class="info__desc">专注互联网好产品，让分享不停止</p>--}}
+            {{--            </section>--}}
             <script src="/assest/js/jquery-1.10.2.min.js"></script>
             <script src="/assest/js/slider.js"></script>
             <script
