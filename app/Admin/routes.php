@@ -20,7 +20,7 @@ Route::group([
     'as'         => config('admin.route.prefix') . '.',
 ], function (Router $router) {
 
-    $router->get('/', "App\Admin\Controllers\HomeController@index")->name('home');
+    $router->get('/', "App\Admin\Controllers\Article\ArticleController@grid")->name('home');
     $router->resource("site_menu", SiteMenuController::class);
     $router->resource("site_link_category", LinkCategoryController::class);
     $router->resource("site_link", LinkController::class);
