@@ -1,6 +1,6 @@
 # 什么是supper-office-websit
 
-supper-office-websit是一个基于[Laravel框架](https://laravel.com/)搭建的一款官网站点。
+supper-office-websit是一个基于[Laravel6.x框架](https://laravel.com/)搭建的一个开源官网系统。
 
 # 功能清单
 
@@ -17,3 +17,46 @@ supper-office-websit是一个基于[Laravel框架](https://laravel.com/)搭建�
 # 预览地址
 
 [预览地址](https://www.qqdeveloper.com/)，暂时只开放用户端的预览，由于很多的功能还未录入数据，用户端当前还不能看到。可以联系我，单独开账号。
+
+# 部署方案
+
+以Nginx为例，具体的可以参考[Laravel官网文档](https://laravel.com/docs/6.x/deployment)的部署章节操作。
+```php
+server
+{
+    listen 80;
+    server_name www.xxx.com ;
+    index index.html index.htm index.php;
+    root  /path/supper-office-website/public;
+
+    include rewrite/laravel.conf;
+    error_page   404   /404.html;
+
+    # nginx rewrite rule
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+    {
+        expires      30d;
+    }
+
+    location ~ .*\.(js|css)?$
+    {
+        expires      12h;
+    }
+
+    location ~ /.well-known {
+        allow all;
+    }
+
+    location ~ /\.
+    {
+        deny all;
+    }
+
+    access_log  /home/wwwlogs/www.xxxx.com.access.log;
+    error_log  /home/wwwlogs/www.xxx.com.error.log;
+}
+```
