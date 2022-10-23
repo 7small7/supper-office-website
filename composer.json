@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "supper-office-website",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Official website template system based on Larravel Framework.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "Official website",
+        "PHP website"
     ],
     "license": "MIT",
     "require": {
