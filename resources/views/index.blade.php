@@ -174,18 +174,18 @@
                 })</script>
         </header>
     @endsection
-    <div id="shade" class="bg_alpha"></div>
-    <div id="shadeInfo" class="wechat_bg bg_offset">
-        <div onclick="closeAdv()" class="closeAdv"></div>
-        <div class="advWechat"></div>
-    </div>
-    <script>function closeAdv() {
-            $("#shade").hide(), $("#shadeInfo").hide()
-        }
+    {{--    <div id="shade" class="bg_alpha"></div>--}}
+    {{--    <div id="shadeInfo" class="wechat_bg bg_offset">--}}
+    {{--        <div onclick="closeAdv()" class="closeAdv"></div>--}}
+    {{--        <div class="advWechat"></div>--}}
+    {{--    </div>--}}
+    {{--    <script>function closeAdv() {--}}
+    {{--            $("#shade").hide(), $("#shadeInfo").hide()--}}
+    {{--        }--}}
 
-        $(function () {
-            window.localStorage.getItem("wechatQR3") ? ($("#shade").hide(), $("#shadeInfo").hide()) : ($("#shade").show(), $("#shadeInfo").show(), window.localStorage.setItem("wechatQR3", "true"))
-        })</script>
+    {{--        $(function () {--}}
+    {{--            window.localStorage.getItem("wechatQR3") ? ($("#shade").hide(), $("#shadeInfo").hide()) : ($("#shade").show(), $("#shadeInfo").show(), window.localStorage.setItem("wechatQR3", "true"))--}}
+    {{--        })</script>--}}
     <main class="page__container page__main">
         <div class="wrap">
             <div class="topBox">
