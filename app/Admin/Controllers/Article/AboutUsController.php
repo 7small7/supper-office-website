@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Admin\Controllers\Article;
 
 use App\Admin\Controllers\AdminBaseController;
+use App\Model\Admin\AboutUs;
 use App\Model\Admin\Banner;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -15,11 +16,11 @@ use Encore\Admin\Grid;
  */
 class AboutUsController extends AdminBaseController
 {
-    protected $title = "轮播图";
+    protected $title = "关于我们";
 
-    public function __construct(Banner $banner)
+    public function __construct(AboutUs $aboutUs)
     {
-        parent::__construct($banner);
+        parent::__construct($aboutUs);
     }
 
     /**
@@ -62,7 +63,7 @@ class AboutUsController extends AdminBaseController
     {
         $form = new Form($this->model);
         $form->hidden("uuid", "数据编号")->default(md5(microtime() . uniqid()));
-        $form->text("title", "文章标题")->required()->help("最大长度不要超过50个字符。");
+        $form->text("title", "文章标题")->required()->help("最大长度不要超过50个字符。如果添加多篇，则以启用并且是最新的一篇显示到用户端。");
         $form->number("views", "阅读数量")->default(0)->help("文章阅读量。由用户阅读生成，后台可以自行修改。");
         $form->date("publish_date", "发布日期")->required()->default(date("Y-m-d"));
         $form->radio("status", "文章状态")->options([1 => "启用", 2 => "禁用"])->default(2);

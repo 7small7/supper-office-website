@@ -6,6 +6,7 @@ use App\Admin\Controllers\Article\CategoryController;
 use App\Admin\Controllers\Site\BannerController;
 use App\Admin\Controllers\Site\LinkCategoryController;
 use App\Admin\Controllers\Site\LinkController;
+use App\Admin\Controllers\Site\SeoController;
 use App\Admin\Controllers\Site\SiteMenuController;
 use Encore\Admin\Facades\Admin;
 use Illuminate\Routing\Router;
@@ -28,4 +29,5 @@ Route::group([
     $router->resource("article_category", CategoryController::class);
     $router->resource("banner", BannerController::class);
     $router->resource("about_us", AboutUsController::class);
+    $router->resource("seo_config", SeoController::class);
 });

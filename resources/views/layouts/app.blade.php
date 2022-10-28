@@ -231,6 +231,8 @@
 <script src="/assest/js/common.js"></script>
 <script src="/assest/js/page/post.js"></script>
 </body>
-
+@foreach($seo as $value)
+    {!! $value['val'] !!}
+@endforeach
 </html>
 @show

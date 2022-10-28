@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Service\ArticleCategoryService;
 use App\Http\Service\ArticleService;
 use App\Http\Service\BannerService;
+use App\Http\Service\SeoService;
 use App\Http\Service\SiteLinkCategoryService;
 use App\Http\Service\SiteMenuService;
 use Illuminate\Contracts\Foundation\Application;
@@ -33,6 +34,7 @@ class IndexController extends Controller
             "articleCategory" => (new ArticleCategoryService())->getList(),
             "link"            => (new SiteLinkCategoryService())->getList(),
             "newArticle"      => (new ArticleService())->getHomeList()["data"],
+            "seo"             => (new SeoService())->getList(),
         ]);
     }
 }
