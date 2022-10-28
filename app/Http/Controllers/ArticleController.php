@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Service\ArticleCategoryService;
 use App\Http\Service\ArticleService;
+use App\Http\Service\SeoService;
 use App\Http\Service\SiteLinkCategoryService;
 use App\Http\Service\SiteMenuService;
 use Illuminate\Contracts\Foundation\Application;
@@ -32,6 +33,7 @@ class ArticleController extends Controller
             "menu"            => (new SiteMenuService())->getList(),
             "articleCategory" => (new ArticleCategoryService())->getList(),
             "link"            => (new SiteLinkCategoryService())->getList(),
+            "seo"             => (new SeoService())->getList(),
         ]);
     }
 
@@ -51,6 +53,7 @@ class ArticleController extends Controller
             "detail"          => $detail["detail"],
             "pre"             => $detail["pre"],
             "next"            => $detail["next"],
+            "seo"             => (new SeoService())->getList(),
         ]);
     }
 }
