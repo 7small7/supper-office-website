@@ -21,6 +21,7 @@ supper-office-websit是一个基于[Laravel6.x框架](https://laravel.com/)搭�
 # 部署方案
 
 以Nginx为例，具体的可以参考[Laravel官网文档](https://laravel.com/docs/6.x/deployment)的部署章节操作。
+
 ```php
 server
 {
@@ -29,7 +30,6 @@ server
     index index.html index.htm index.php;
     root  /path/supper-office-website/public;
 
-    include rewrite/laravel.conf;
     error_page   404   /404.html;
 
     # nginx rewrite rule
