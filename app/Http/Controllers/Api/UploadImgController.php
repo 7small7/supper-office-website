@@ -27,14 +27,11 @@ class UploadImgController extends Controller
     {
         // 判断是否有文件上传
         if ($request->hasFile('laravel-admin-file')) {
-            // 获取文件,file对应的是前端表单上传input的name
             $file = $request->file('laravel-admin-file');
             $disk = QiniuStorage::disk('qiniu');
-            // 重命名文件
+            // 上传文件扩展限制
             $fileName = md5($file->getClientOriginalName() . time() . rand()) . '.' . $file->getClientOriginalExtension();
-            // 上传到七牛
-            $bool = $disk->put('image_' . $fileName, file_get_contents($file->getRealPath()));
-            // 判断是否上传成功
+            $bool     = $disk->put('image_' . $fileName, file_get_contents($file->getRealPath()));
             if ($bool) {
                 $path = $disk->downloadUrl('image_' . $fileName);
                 return response([
