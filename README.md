@@ -4,9 +4,8 @@ supper-office-websit是一个基于[Laravel6.x框架](https://laravel.com/)搭�
 
 # 仓库地址
 
-1. [Github](https://github.com/7small7/supper-office-website/tree/master)
-
-2. [Gitee](https://gitee.com/bruce_qiq/supper-office-website/tree/master/)
+[Github](https://github.com/7small7/supper-office-website/tree/master)
+, [Gitee](https://gitee.com/bruce_qiq/supper-office-website/tree/master/)
 
 # 功能清单
 
