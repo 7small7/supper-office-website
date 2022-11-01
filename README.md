@@ -2,6 +2,12 @@
 
 supper-office-websit是一个基于[Laravel6.x框架](https://laravel.com/)搭建的一个开源内容系统，supper-office-websit还是一个开箱即用的开源内容管理系统。
 
+# 仓库地址
+
+1. [Github](https://github.com/7small7/supper-office-website/tree/master)
+
+2. [Gitee](https://gitee.com/bruce_qiq/supper-office-website/tree/master/)
+
 # 功能清单
 
 - [x] 权限管理：基于RBAC模型搭建权限系统。
